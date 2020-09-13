@@ -1,0 +1,113 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vehicles",
+  "info": {
+    "name": "vehicle"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "gallery": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "price": {
+      "type": "integer",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "mileage": {
+      "type": "integer",
+      "required": true
+    },
+    "year": {
+      "type": "integer",
+      "required": true
+    },
+    "condition": {
+      "type": "string",
+      "required": true
+    },
+    "make": {
+      "type": "string",
+      "required": true
+    },
+    "model": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "string",
+      "required": true
+    },
+    "transmission": {
+      "type": "string",
+      "required": true
+    },
+    "fuel_type": {
+      "type": "string",
+      "required": true
+    },
+    "interior_color": {
+      "type": "string",
+      "required": false
+    },
+    "exterior_color": {
+      "type": "string",
+      "required": false
+    },
+    "interior_features": {
+      "type": "string",
+      "required": false
+    },
+    "exterior_features": {
+      "type": "string",
+      "required": false
+    },
+    "safety_features": {
+      "type": "string",
+      "required": false
+    },
+    "extra_features": {
+      "type": "string",
+      "required": false
+    },
+    "vin": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "vender_address": {
+      "type": "string",
+      "default": "3275 NW 24th Street Rd, Miami, FL, 33142"
+    },
+    "vender_phone": {
+      "type": "string",
+      "default": "305-200-9050"
+    },
+    "vender_email": {
+      "type": "email",
+      "default": "floridacar785@gmail.com"
+    }
+  }
+}
