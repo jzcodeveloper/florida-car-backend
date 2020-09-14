@@ -4,13 +4,7 @@ module.exports = ({ env }) => ({
     default: {
       connector: "mongoose",
       settings: {
-        uri: env("DATABASE_URI" || ""),
-        host: env("DATABASE_HOST", "127.0.0.1"),
-        srv: env.bool("DATABASE_SRV", false),
-        port: env.int("DATABASE_PORT", 27017),
-        database: env("DATABASE_NAME", "florida-car"),
-        username: env("DATABASE_USERNAME", ""),
-        password: env("DATABASE_PASSWORD", ""),
+        uri: env("DATABASE_URI"),
         ssl: { rejectUnauthorized: false },
       },
       options: {
@@ -20,9 +14,9 @@ module.exports = ({ env }) => ({
         pool: {
           min: 0,
           max: 10,
-          idleTimeoutMillis: 30000,
-          createTimeoutMillis: 30000,
-          acquireTimeoutMillis: 30000,
+          idleTimeoutMillis: 60000,
+          createTimeoutMillis: 60000,
+          acquireTimeoutMillis: 60000,
         },
       },
     },
